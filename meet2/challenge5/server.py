@@ -30,7 +30,9 @@ try:
                     print(str(line), 
                           'PALINDROME') if line == line[::-1] else print(str(line), 'NOT PALINDROME')
                     # Mengecek apakah baris tersebut palindrome atau bukan
-
+                    f = open("file.txt", "a")
+                    f.write (str(line), 
+                          'PALINDROME') if line == line[::-1] else print(str(line), 'NOT PALINDROME')
                 if str(data): 
                     client_socket.send(data.encode()) 
                 else:

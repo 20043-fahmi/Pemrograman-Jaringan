@@ -24,7 +24,9 @@ try:
                 data = sock.recv(1024).decode() # Menerima input dari client
                 print(str(sock.getpeername()), str(
                     data) + "=" + str(eval(data))) #print peername (ip,port) juga dengan hasil dari input
-
+                f = open("file.txt", "a") # Membuka file untuk ditulis
+                samaDengan = "="
+                f.write(str(sock.getpeername()) + str(data.encode() + samaDengan.encode() + str(eval(data)).encode())) # Menulis hasil dari input ke file
                 if str(data): # Jika input tidak kosong
                     client_socket.send(data.encode()) # Mengirim input ke client
                 else:
