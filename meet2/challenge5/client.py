@@ -9,8 +9,8 @@ sys.stdout.write('>> ')
 
 try:
     while True:
-        inputTest = str(input())
-        client_socket.send(inputTest.encode())
+        inputTest = str(input()) # Menerima input dari user kirim file yang mau di cek
+        client_socket.send(inputTest.encode()) # Mengirim input ke server
 
 except KeyboardInterrupt:
     client_socket.close()
